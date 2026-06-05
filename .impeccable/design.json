@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-05T05:10:00Z",
+  "title": "Design System: ENGINSPECT",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Indigo Accent", "canonical": "var(--accent)" },
+      "bg-light": { "role": "neutral", "displayName": "Light Background", "canonical": "#f8fafc" },
+      "bg-dark": { "role": "neutral", "displayName": "Dark Background", "canonical": "#030712" },
+      "surface-light": { "role": "neutral", "displayName": "Light Surface", "canonical": "#ffffff" },
+      "surface-dark": { "role": "neutral", "displayName": "Dark Surface", "canonical": "#0b0f19" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Title", "purpose": "Main hero and layout metrics" },
+      "body": { "displayName": "Body Copy", "purpose": "Standard prose and text" }
+    },
+    "shadows": [
+      { "name": "hover-lift", "value": "0 12px 24px -10px rgba(0, 0, 0, 0.15)", "purpose": "Card raise state response" },
+      { "name": "modal-overlay", "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1)", "purpose": "Stacking dialog depth" }
+    ],
+    "motion": [
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Standard deceleration for layouts" }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard action control trigger",
+      "html": "<button class=\"ds-btn-primary\">Confirm Upgrade</button>",
+      "css": ".ds-btn-primary { background: #4f46e5; color: #ffffff; padding: 8px 16px; font-weight: 500; font-family: sans-serif; border: none; border-radius: 6px; cursor: pointer; transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #4338ca; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Control Room",
+    "overview": "ENGINSPECT is an industrial telemetry and energy inspection dashboard. The design system mimics a physical power grid control room: clean grid structures, highly dense but legible tables, clear state indicators, and functional status coloring.",
+    "keyCharacteristics": [
+      "Strict Information Density",
+      "Dynamic Theming",
+      "Refined Interactivity"
+    ],
+    "rules": [
+      { "name": "The Functional Color Rule", "body": "Color carries functional information. Do not color text or icons unless representing a status change or a primary call-to-action.", "section": "colors" },
+      { "name": "The IBM Plex Doctrine", "body": "The IBM Plex Thai typeface should render clean curves and crisp rendering. Pair it with Share Tech Mono for raw equipment tag numbers and telemetry readouts.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces must lay flat in light/dark states. Elevation via shadow indicates temporary action states or stacking order, never styling.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do maintain crisp, readable text with contrast ratios above 4.5:1.",
+      "Do use Share Tech Mono for numerical telemetry readings.",
+      "Do align tables and lists to functional grid cells."
+    ],
+    "donts": [
+      "Don't use decorative side-stripe colored borders on cards.",
+      "Don't use text gradients under any circumstances.",
+      "Don't use glassmorphism decoratively on standard page cards.",
+      "Don't allow text overflow on mobile viewports; enforce responsive wrap and size clamps."
+    ]
+  }
+}
